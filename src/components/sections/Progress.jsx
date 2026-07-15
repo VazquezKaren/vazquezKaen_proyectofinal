@@ -1,0 +1,10 @@
+import { useEffect, useRef, useState } from 'react'
+import SectionHeading from '../ui/SectionHeading'
+import { leaders, specialties } from '../../data/content'
+
+export default function Progress() {
+  const ref = useRef(null)
+  const [visible, setVisible] = useState(false)
+  useEffect(() => { const observer = new IntersectionObserver(([entry]) => entry.isIntersecting && setVisible(true), { threshold: .2 }); observer.observe(ref.current); return () => observer.disconnect() }, [])
+  return <section className="section" id="progreso"><div className="container"><SectionHeading tag="Estadísticas y Competencia" title="Convierte tu estudio en progreso medible" description="Visualiza tus fortalezas y enfócate en tus áreas de mejora con reportes automáticos detallados." /><div className="stats-dashboard" ref={ref}><div className="stats-grid">{[['3,000+', 'Preguntas Disponibles'], ['94%', 'Tasa de Aprobación'], ['120K+', 'Batallas Jugadas'], ['4.9/5', 'Calificación de Estudiantes']].map(([number, label]) => <div className="stat-item" key={label}><div className="stat-number">{number}</div><div className="stat-label">{label}</div></div>)}</div><div className="stats-chart-ranking-grid"><div className="chart-card-wrapper"><h3 className="chart-title">Precisión por Especialidad</h3><div className="progress-bar-list">{specialties.map(([name, percent, color]) => <div className="prog-item" key={name}><div className="prog-info"><span>{name}</span><span>{percent}%</span></div><div className="prog-track"><div className={`prog-fill ${color}`} style={{ width: visible ? `${percent}%` : 0 }} /></div></div>)}</div></div><div className="leaderboard-card-wrapper"><h3 className="leaderboard-title">Líderes de la Semana</h3><div className="leaderboard-list">{leaders.map(([rank, initials, name, score], index) => <div className={`leaderboard-item${index === 0 ? ' top-user' : ''}`} key={name}><div className="leader-info"><span className="leader-rank">{rank}</span><div className="leader-avatar">{initials}</div><span className="leader-name">{name}</span></div><span className="leader-score">{score}</span></div>)}</div></div></div></div></div></section>
+}

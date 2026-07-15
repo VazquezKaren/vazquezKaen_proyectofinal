@@ -1,0 +1,5 @@
+import SectionHeading from '../ui/SectionHeading'
+
+const steps = [['Crea tu banco', 'Selecciona especialidad, cantidad de preguntas y modo de estudio preferido.'], ['Resuelve', 'Enfréntate a las preguntas con explicaciones integradas en tiempo real.'], ['Revisa resultados', 'Analiza tu progreso por temas con retroalimentación inmediata del equipo médico.'], ['Mejora y domina', 'Sube de nivel, gana batallas de conocimiento y prepárate para aprobar tu examen.']]
+
+export default function HowItWorks() { return <section className="section section-bg-light" id="como-funciona"><div className="container"><SectionHeading tag="Paso a paso" title="¿Cómo funciona Praxia by TM?" description="Empieza en minutos y optimiza tu tiempo de estudio con un flujo de trabajo enfocado al éxito." /><div className="how-it-works-grid">{steps.map(([title, description], index) => <article className="step-card" key={title}><div className="step-number">{index + 1}</div><h3 className="step-title">{title}</h3><p className="step-desc">{description}</p></article>)}</div></div></section> }
