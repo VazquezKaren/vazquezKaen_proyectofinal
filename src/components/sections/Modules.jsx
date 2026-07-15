@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import SectionHeading from '../ui/SectionHeading'
-import { modules } from '../../data/content.jsx'
+import { modules } from '../../data/content.js'
 
 export default function Modules() {
   const [activeId, setActiveId] = useState(modules[0].id)
