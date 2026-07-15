@@ -274,6 +274,7 @@ button.module-item {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-shrink: 0;
 }
 
 .logo-icon {
@@ -305,15 +306,27 @@ button.module-item {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  justify-content: center;
+  gap: clamp(14px, 1.6vw, 26px);
+  flex: 1;
+  margin: 0 clamp(14px, 2vw, 30px);
   list-style: none;
 }
 
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
 .nav-link {
+  display: flex;
+  align-items: center;
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 15px;
-  color: var(--text-dark);
+  font-size: 14px;
+  line-height: 1.2;
+  color: rgba(70, 70, 82, 0.68);
+  white-space: nowrap;
   position: relative;
 }
 
@@ -329,7 +342,7 @@ button.module-item {
 }
 
 .nav-link:hover {
-  color: var(--blue-primary);
+  color: rgba(53, 59, 155, 0.95);
 }
 
 .nav-link:hover::after {
@@ -341,6 +354,7 @@ button.module-item {
   align-items: center;
   gap: 8px;
   flex-wrap: nowrap;
+  flex-shrink: 0;
 }
 
 .hamburger {
