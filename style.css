@@ -95,7 +95,12 @@ button.module-item {
   font: inherit;
 }
 
-.nav-button { padding: 10px 20px; font-size: 14px; }
+.nav-button {
+  padding: 7px 13px;
+  font-size: 12px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
 .phone-tall { height: 620px; }
 .full-height { height: 100%; }
 .phone-image { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -334,7 +339,8 @@ button.module-item {
 .nav-cta {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
+  flex-wrap: nowrap;
 }
 
 .hamburger {
@@ -2320,6 +2326,8 @@ button.module-item {
     left: 24px;
     right: 24px;
     justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
   .header.menu-open .hamburger span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
