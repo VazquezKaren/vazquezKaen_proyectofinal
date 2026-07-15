@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { questions } from '../../data/content'
+import { questions } from '../../data/content.jsx'
 
 const initialGame = { phase: 'lobby', question: 0, userScore: 0, botScore: 0, seconds: 15, selected: null, botSelected: null }
 

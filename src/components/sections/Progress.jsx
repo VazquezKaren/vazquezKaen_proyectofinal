@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import SectionHeading from '../ui/SectionHeading'
-import { leaders, specialties } from '../../data/content'
+import { leaders, specialties } from '../../data/content.jsx'
 
 export default function Progress() {
   const ref = useRef(null)
