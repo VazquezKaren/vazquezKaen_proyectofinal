@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+export function initializeLanding() {
 
   // ==========================================
   // 1. Mobile Menu & Navigation
@@ -356,4 +356,4 @@ document.addEventListener('DOMContentLoaded', () => {
     statsObserver.observe(statsDashboard);
   }
 
-});
+}
